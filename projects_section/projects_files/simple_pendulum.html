@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Pendulum Simulation</title>
+     <link rel="stylesheet" href="simplependulum.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="simulation-container">
+        <canvas id="pendulumCanvas"></canvas>
+        <div class="control-panel">
+            <div class="control-group">
+                <label for="lengthSlider">Length: <span id="lengthValue">250</span></label>
+                <input type="range" id="lengthSlider" min="50" max="400" value="250" class="slider">
+            </div>
+            <div class="control-group">
+                <label for="gravitySlider">Gravity: <span id="gravityValue">0.4</span></label>
+                <input type="range" id="gravitySlider" min="0.05" max="2.0" value="0.4" step="0.01" class="slider">
+            </div>
+            <div class="control-group">
+                <label for="dampingSlider">Damping: <span id="dampingValue">0.999</span></label>
+                <input type="range" id="dampingSlider" min="0.99" max="1.0" value="0.999" step="0.001" class="slider">
+            </div>
+            <button id="btnReset">Reset</button>
+        </div>
+    </div>
+    <script src="simple_pendulum.js"></script>
+</body>
+</html>

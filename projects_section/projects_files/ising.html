@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Ising Model Simulation</title>
+    <link rel="stylesheet" href="ising.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="simulation-container">
+        <div class="visualization-panel">
+            <canvas id="isingCanvas"></canvas>
+        </div>
+
+        <div class="control-panel">
+            <div class="control-group">
+                <h3><i class="fas fa-temperature-high"></i> System Parameters</h3>
+                <label for="tempSlider">Temperature (T): <span id="tempValue">2.27</span></label>
+                <input type="range" id="tempSlider" min="0.1" max="5.0" value="2.27" step="0.01" class="slider temp-slider">
+                
+                <label for="fieldSlider">External Field (H): <span id="fieldValue">0.0</span></label>
+                <input type="range" id="fieldSlider" min="-1.0" max="1.0" value="0.0" step="0.05" class="slider">
+            </div>
+
+            <div class="control-group">
+                <h3><i class="fas fa-chart-bar"></i> Live Data</h3>
+                <div class="data-display">
+                    <div class="data-item">
+                        <span>Magnetization</span>
+                        <strong id="magnetizationValue">0.00</strong>
+                    </div>
+                    <div class="data-item">
+                        <span>Energy</span>
+                        <strong id="energyValue">0.00</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="btnRun">Run</button>
+                <button id="btnReset">Reset</button>
+            </div>
+
+            <div class="equation-box">
+                <h4>The Ising Hamiltonian</h4>
+                <p>The energy of the system is described by:</p>
+                $$ H = -J \sum_{\langle i,j \rangle} s_i s_j - h \sum_i s_i $$
+                <p>Where $s_i = \pm 1$ represents the spin at site $i$, and the first sum is over nearest neighbors.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      MathJax = { tex: { inlineMath: [['$', '$']] } };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="ising.js"></script>
+</body>
+</html>

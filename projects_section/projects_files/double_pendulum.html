@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Pendulum Chaos Simulation</title>
+    <link rel="stylesheet" href="double_pendulum.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="simulation-container">
+        <div class="visualization-panel">
+            <canvas id="simulationCanvas"></canvas>
+            <div id="infoOverlay" class="overlay-text">Click & Drag Bob 2 to Set Initial Position</div>
+        </div>
+
+        <div class="control-panel">
+            <div class="control-group">
+                <h3><i class="fas fa-ruler-vertical"></i> Arm Properties</h3>
+                <label for="l1Slider">Length 1 (L₁): <span id="l1Value">150</span></label>
+                <input type="range" id="l1Slider" min="50" max="250" value="150" class="slider">
+                <label for="l2Slider">Length 2 (L₂): <span id="l2Value">150</span></label>
+                <input type="range" id="l2Slider" min="50" max="250" value="150" class="slider">
+            </div>
+
+            <div class="control-group">
+                <h3><i class="fas fa-weight-hanging"></i> Mass Properties</h3>
+                <label for="m1Slider">Mass 1 (m₁): <span id="m1Value">20</span></label>
+                <input type="range" id="m1Slider" min="5" max="50" value="20" class="slider">
+                <label for="m2Slider">Mass 2 (m₂): <span id="m2Value">20</span></label>
+                <input type="range" id="m2Slider" min="5" max="50" value="20" class="slider">
+            </div>
+            
+            <div class="control-group">
+                <h3><i class="fas fa-route"></i> Visualization</h3>
+                <label class="switch-label" for="traceSwitch">Show Trace</label>
+                <label class="switch">
+                    <input type="checkbox" id="traceSwitch" checked>
+                    <span class="switch-slider"></span>
+                </label>
+            </div>
+
+            <div class="actions">
+                <button id="btnReset">Reset</button>
+            </div>
+
+            <div class="equation-box">
+                <h4>The Lagrangian</h4>
+                <p>The motion is derived from the system's Lagrangian ($L=T-V$), which describes its kinetic ($T$) and potential ($V$) energies.</p>
+                $$ L = \frac{1}{2}(m_1+m_2)l_1^2\dot{\theta}_1^2 + \frac{1}{2}m_2l_2^2\dot{\theta}_2^2 + \dots $$
+            </div>
+        </div>
+    </div>
+
+    <script>
+      MathJax = { tex: { inlineMath: [['$', '$']] } };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="double_pendulum.js"></script>
+</body>
+</html>

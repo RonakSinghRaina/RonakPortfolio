@@ -1,0 +1,108 @@
+/* --- Path Integral Blog Theme (Electric Green) --- */
+
+/* This class on the body tag activates the new theme */
+.path-integral-theme {
+    /* Define a new, distinct set of accent colors */
+    --accent-primary: #39FF14;   /* Electric Green */
+    --accent-secondary: #A0A0A0;  /* Cool Grey */
+    --accent-tertiary: #98FB98;  /* Pale Green */
+    --shadow-glow: 0 0 30px rgba(57, 255, 20, 0.3);
+}
+
+/* Override existing styles using the theme class */
+.path-integral-theme .blog-header h1 {
+    background: linear-gradient(135deg, var(--accent-tertiary), var(--accent-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.path-integral-theme .blog-post h2 i {
+    color: var(--accent-primary);
+}
+
+.path-integral-theme #back-page a,
+.path-integral-theme .meta-item i {
+    color: var(--accent-primary);
+}
+
+.path-integral-theme .blog-post strong {
+    color: var(--accent-primary);
+}
+
+/* Unique elements for this blog post, styled with the new theme */
+.key-insight-box {
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+    border: 1px solid var(--accent-primary);
+    border-radius: 15px;
+    background: linear-gradient(145deg, rgba(57, 255, 20, 0.05), rgba(160, 160, 160, 0.05));
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.1);
+}
+
+.key-insight-box h3 {
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.interference-visual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.interference-path {
+    width: 292px;
+    background: var(--glass-bg);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid var(--glass-border);
+}
+
+.interference-path h4 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.interference-path p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    min-height: 120px; /* Align heights */
+}
+
+.phasor-diagram {
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem;
+    letter-spacing: 0.5rem;
+}
+
+.phasor-diagram.destructive {
+    color: var(--text-muted);
+    display: flex;
+    justify-content: center;
+   
+     color: red;
+      text-shadow:  rgba(255, 0, 0, 0.5);
+}
+
+.phasor-diagram.constructive {
+    color: var(--accent-primary);
+    text-shadow: 0 0 15px var(--accent-primary);
+    font-weight: bold;
+}
+
+/* Responsive adjustment for the visual */
+@media (max-width: 768px) {
+    .interference-visual {
+        grid-template-columns: 1fr;
+    }
+    .interference-path p {
+        min-height: auto;
+    }
+}

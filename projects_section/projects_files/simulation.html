@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave-Particle Duality Simulation</title>
+    <link rel="stylesheet" href="simulation.css">
+</head>
+<body>
+    <div class="simulation-container">
+        <div class="main-panel">
+            <canvas id="simulationCanvas"></canvas>
+            <div class="chart-container">
+                <canvas id="detectorChart"></canvas>
+                <div class="particle-counter">Particles Detected: <span id="particleCount">0</span></div>
+            </div>
+        </div>
+
+        <div class="control-panel">
+            <div class="control-group">
+                <h3>Source</h3>
+                <div class="button-group">
+                    <button id="btnWave" class="active">Wave</button>
+                    <button id="btnParticle">Particles</button>
+                </div>
+                <label for="particleRate">Particle Rate: <span id="particleRateValue">10</span> p/s</label>
+                <input type="range" id="particleRate" min="1" max="100" value="10" class="slider">
+            </div>
+
+            <div class="control-group">
+                <h3>Slits</h3>
+                <div class="button-group">
+                    <button id="btnSingleSlit">Single Slit</button>
+                    <button id="btnDoubleSlit" class="active">Double Slit</button>
+                </div>
+                <label for="slitSeparation">Slit Separation: <span id="slitSeparationValue">60</span></label>
+                <input type="range" id="slitSeparation" min="20" max="100" value="60" class="slider">
+                <label for="slitWidth">Slit Width: <span id="slitWidthValue">10</span></label>
+                <input type="range" id="slitWidth" min="2" max="20" value="10" class="slider">
+            </div>
+
+            <div class="control-group">
+                <h3>Observation</h3>
+                <label class="switch-label" for="detectorSwitch">Which-Path Detector</label>
+                <label class="switch">
+                    <input type="checkbox" id="detectorSwitch">
+                    <span class="switch-slider"></span>
+                </label>
+            </div>
+            
+            <div class="control-group actions">
+                <button id="btnRun">Run</button>
+                <button id="btnReset">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="simulation.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ronak | Theoretical Physics</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="quantum_blog.css">
+
+
+</head>
+
+<body>
+    <div class="quantum-loader" id="loader">
+        <div class="loader-atom">
+            <div class="nucleus"></div>
+            <div class="electron-orbit">
+                <div class="electron"></div>
+            </div>
+            <div class="electron-orbit">
+                <div class="electron"></div>
+            </div>
+            <div class="electron-orbit">
+                <div class="electron"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <div class="physics-background"></div>
+    <div class="physics-particles" id="particleSystem"></div>
+    <div class="floating-equations" id="equationSystem"></div>
+
+    <header id="header">
+    <nav>
+        <a href="../index.html" class="logo">HOME</a>
+
+        <!-- Desktop Navigation -->
+        <ul class="nav-links">
+            <li><a href="../projects_section/projects_main.html">Projects</a></li>
+            <li><a href="../skills_section/skills_main.html">Skills</a></li>
+            <li><a href="../blogs_section/blogs_main.html">Blogs</a></li>
+            <li><a href="../coursework_section/coursework_main.html">Coursework</a></li>
+            <li><a href="../contact_section/contact_main.html">Contact</a></li>
+        </ul>
+
+        <!-- Hamburger Menu Icon (for mobile) -->
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+</header>
+
+<!-- Mobile Navigation Menu (hidden by default) -->
+<div class="mobile-nav" id="mobileNav">
+    <a href="../projects_section/projects_main.html">Projects</a>
+    <a href="../skills_section/skills_main.html">Skills</a>
+    <a href="../blogs_section/blogs_main.html">Blogs</a>
+    <a href="../coursework_section/coursework_main.html">Coursework</a>
+    <a href="../contact_section/contact_main.html">Contact</a>
+</div>
+
+    <main>
+        <div id="home-content" class="content-section active-section">
+            <section class="hero reveal">
+                <h1>Ronak Singh Raina</h1>
+                <h2>Theoretical Physics Enthusiast</h2>
+                <p class="subtitle">Exploring the fundamental nature of reality through quantum mechanics, relativity,
+                    and computational physics</p>
+            </section>
+            <div class="scroll-down-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            
+            <section class="profile-bio-section reveal">
+                <div class="bio-content">
+                    <h2>About Me</h2>
+                    <div class="bio-text">
+                        <p>I'm a passionate theoretical physics student at IISER Thiruvananthapuram, dedicated to
+                            unraveling the mysteries of the universe through mathematical elegance and computational
+                            power.</p>
+                        <p>My research interests span quantum field theory, general relativity, and statistical
+                            mechanics. I believe that the most profound truths about reality are written in the language
+                            of mathematics.</p>
+                        <p>When I'm not deriving equations or running simulations, you'll find me exploring the
+                            philosophical implications of quantum mechanics and contemplating the nature of spacetime.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="profile-side">
+                    <div class="profile-container">
+                        <div class="profile-rings">
+                            <div class="ring"></div>
+                            <div class="ring"></div>
+                            <div class="ring"></div>
+                        </div>
+                        <img src="pic.png" alt="Ronak" class="profile-img">
+                    </div>
+                </div>
+            </section>
+
+            
+            <section class="quantum-grid reveal">
+                <div class="quantum-card" 
+                data-section-link="projects">
+                <a class="heading"href="projects_section/projects_main.html">
+                    <div class="card-icon"><i class="fas fa-atom"></i></div>
+                    <h3>Projects</h3>
+                    <p>Dive into simulations of quantum tunneling, wave-particle duality, and computational models of
+                        fundamental physics phenomena.</p>
+                </div>
+                </a>
+                <div class="quantum-card" data-section-link="skills">
+                    <a class="heading" href="skills_section/skills_main.html" >
+                    
+                    <div class="card-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Skills and Expertise</h3>
+                    <p>Theoretical frameworks, computational methods, and mathematical tools for exploring the mysteries
+                        of the universe.</p>
+                </div>
+                </a>
+                <div class="quantum-card" data-section-link="blog">
+                    <a class = "heading" href="blogs_section/blogs_main.html">
+                    <div class="card-icon"><i class="fas fa-infinity"></i></div>
+                    <h3>Blog and Insights</h3>
+                    <p>Insights into cutting-edge physics research, from quantum field theory to cosmology and
+                        everything in between.</p>
+                </div>
+                </a>
+
+            </section>
+        </div>
+
+        
+    </main>
+
+    <footer class="reveal">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="mailto:ronak23@iisertvm.ac.i"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/ronak-singh-raina-91241232b/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/RonakSinghRaina"><i class="fab fa-github"></i></a>
+                <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+            </div>
+            <p>&copy; 2025 Ronak.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

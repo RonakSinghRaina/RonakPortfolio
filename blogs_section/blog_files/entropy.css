@@ -1,0 +1,93 @@
+/* --- Entropy Blog Theme V2 (Deep Indigo) --- */
+
+/* This class on the body tag activates the theme */
+.entropy-v2-theme {
+    /* Define a new, distinct set of accent colors */
+    --accent-primary: #AFEEEE;   /* Pale Turquoise */
+    --accent-secondary: #8A2BE2;  /* Blue Violet */
+    --accent-tertiary: #483D8B;  /* Dark Slate Blue */
+    --shadow-glow: 0 0 30px rgba(175, 238, 238, 0.2);
+}
+
+/* Override existing styles using the theme class */
+.entropy-v2-theme .blog-header h1 {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.entropy-v2-theme .blog-post h2 i {
+    color: var(--accent-primary);
+}
+
+.entropy-v2-theme #back-page a,
+.entropy-v2-theme .meta-item i {
+    color: var(--accent-primary);
+}
+
+.entropy-v2-theme .blog-post strong {
+    color: var(--accent-secondary);
+}
+
+/* New, unique elements for this blog post */
+.key-formula-box {
+    text-align: center;
+    padding: 2.5rem;
+    margin: 3rem 0;
+    border: 1px solid var(--accent-tertiary);
+    border-radius: 20px;
+    background: linear-gradient(145deg, rgba(72, 61, 139, 0.1), rgba(138, 43, 226, 0.1));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.math-heavy-section {
+    background: var(--glass-bg);
+    padding: 2.5rem;
+    margin: 2rem -2.5rem; /* Extend to the edges of the parent padding */
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.derivation-panel {
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 15px;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid var(--glass-border);
+}
+
+.derivation-panel h3 {
+    color: var(--accent-primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.concept-box-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.concept-box {
+    background: var(--glass-bg);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid var(--accent-tertiary);
+}
+
+.concept-box h3 {
+    text-align: center;
+    color: var(--accent-primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Responsive adjustment for concept boxes */
+@media (max-width: 768px) {
+    .concept-box-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+

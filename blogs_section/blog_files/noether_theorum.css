@@ -1,0 +1,92 @@
+/* --- Noether's Theorem Blog Theme --- */
+
+/* This class on the body tag activates the theme */
+.noether-theme {
+    /* Define a new set of accent colors for this post */
+    --accent-primary: #9400D3;   /* Dark Violet */
+    --accent-secondary: #32CD32;  /* Lime Green */
+    --accent-tertiary: #BA55D3;  /* Medium Orchid */
+    --shadow-glow: 0 0 30px rgba(148, 0, 211, 0.3);
+}
+
+/* Override existing styles using the theme class */
+.noether-theme .blog-header h1 {
+    background: linear-gradient(135deg, var(--accent-tertiary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.noether-theme .blog-post h2 i {
+    color: var(--accent-primary);
+}
+
+.noether-theme #back-page a,
+.noether-theme .meta-item i {
+    color: var(--accent-primary);
+}
+
+/* New, unique elements for this blog post */
+.key-concept-box {
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    background: linear-gradient(145deg, rgba(148, 0, 211, 0.05), rgba(50, 205, 50, 0.05));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.key-concept-box h3 {
+    text-align: center;
+    color: var(--accent-secondary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.derivation-section {
+    background: var(--glass-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    margin-top: 3rem;
+    border: 1px solid var(--glass-border);
+}
+
+.derivation-step {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px dashed var(--glass-border);
+}
+
+.derivation-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.derivation-step h4 {
+    font-size: 1.2rem;
+    color: var(--accent-tertiary);
+    margin-bottom: 1rem;
+}
+
+.results-table {
+    width: 100%;
+    margin-top: 2rem;
+    border-collapse: collapse;
+    color: var(--text-secondary);
+}
+
+.results-table th, .results-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.results-table thead {
+    color: var(--accent-secondary);
+    font-size: 1.1rem;
+}
+
+.results-table strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}

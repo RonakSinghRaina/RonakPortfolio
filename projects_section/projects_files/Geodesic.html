@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geodesic Motion Simulation</title>
+    <link rel="stylesheet" href="Geodesic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="simulation-container">
+        <div class="visualization-panel">
+            <canvas id="simulationCanvas"></canvas>
+            <div id="infoOverlay" class="overlay-text">Click 'Launch' to simulate a particle's trajectory</div>
+        </div>
+
+        <div class="control-panel">
+            <div class="control-group">
+                <h3><i class="fas fa-star"></i> Central Mass</h3>
+                <label for="massSlider">Mass (Curvature): <span id="massValue">500</span></label>
+                <input type="range" id="massSlider" min="0" max="2000" value="500" class="slider">
+            </div>
+
+            <div class="control-group">
+                <h3><i class="fas fa-rocket"></i> Particle Properties</h3>
+                <label for="velocityXSlider">Initial Velocity X: <span id="velocityXValue">1.5</span></label>
+                <input type="range" id="velocityXSlider" min="-5" max="5" value="1.5" step="0.1" class="slider">
+                
+                <label for="velocityYSlider">Initial Velocity Y: <span id="velocityYValue">0.5</span></label>
+                <input type="range" id="velocityYSlider" min="-5" max="5" value="0.5" step="0.1" class="slider">
+            </div>
+
+            <div class="control-group">
+                <h3><i class="fas fa-ruler-combined"></i> Visualization</h3>
+                <label class="switch-label" for="flatPathSwitch">Show Flat Space Path</label>
+                <label class="switch">
+                    <input type="checkbox" id="flatPathSwitch">
+                    <span class="switch-slider"></span>
+                </label>
+            </div>
+
+            <div class="actions">
+                <button id="btnLaunch">Launch</button>
+                <button id="btnReset">Reset</button>
+            </div>
+
+            <div class="equation-box">
+                <h4>The Geodesic Equation</h4>
+                <p>This equation describes the path $x^\mu(\tau)$ of a freely falling particle through spacetime.</p>
+                $$ \frac{d^2 x^\mu}{d\tau^2} + \Gamma^\mu_{\alpha\beta} \frac{dx^\alpha}{d\tau} \frac{dx^\beta}{d\tau} = 0 $$
+                <p>The Christoffel Symbols ($\Gamma^\mu_{\alpha\beta}$) encode all the information about the curvature of spacetime.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      MathJax = { tex: { inlineMath: [['$', '$']] } };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="Geodesic.js"></script>
+</body>
+</html>

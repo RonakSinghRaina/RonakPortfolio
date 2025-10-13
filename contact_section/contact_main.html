@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact | Ronak</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+     <div class="quantum-loader" id="loader">
+        <div class="loader-atom">
+            <div class="nucleus"></div>
+            <div class="electron-orbit"><div class="electron"></div></div>
+            <div class="electron-orbit"><div class="electron"></div></div>
+            <div class="electron-orbit"><div class="electron"></div></div>
+        </div>
+    </div>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <div class="physics-background"></div>
+    <div class="physics-particles" id="particleSystem"></div>
+    <div class="floating-equations" id="equationSystem"></div>
+   <header id="header">
+    <nav>
+        <a href="../index.html" class="logo">HOME</a>
+
+        <!-- Desktop Navigation -->
+        <ul class="nav-links">
+            <li><a href="../projects_section/projects_main.html">Projects</a></li>
+            <li><a href="../skills_section/skills_main.html">Skills</a></li>
+            <li><a href="../blogs_section/blogs_main.html">Blogs</a></li>
+            <li><a href="../coursework_section/coursework_main.html">Coursework</a></li>
+            <li><a href="../contact_section/contact_main.html">Contact</a></li>
+        </ul>
+
+        <!-- Hamburger Menu Icon (for mobile) -->
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+</header>
+
+<!-- Mobile Navigation Menu (hidden by default) -->
+<div class="mobile-nav" id="mobileNav">
+    <a href="../projects_section/projects_main.html">Projects</a>
+    <a href="../skills_section/skills_main.html">Skills</a>
+    <a href="../blogs_section/blogs_main.html">Blogs</a>
+    <a href="../coursework_section/coursework_main.html">Coursework</a>
+    <a href="../contact_section/contact_main.html">Contact</a>
+</div>
+    <main class="page-container">
+        <div class="page-hero">
+            <h1 class="page-title"><i class="fas fa-envelope-open-text glow-icon"></i> Get In Touch</h1>
+            <p class="page-subtitle">I'm always open to discussing physics, research collaborations, or new ideas. Feel free to reach out.</p>
+        </div>
+        <div class="contact-wrapper">
+            <div class="contact-form-container">
+                <form id="contact-form" action="https://formspree.io/f/mqaygqzv" method="POST">
+                    <div class="form-group"><input type="text" id="name" name="name" placeholder="Your Name" required></div>
+                    <div class="form-group"><input type="email" id="email" name="email" placeholder="Your Email" required></div>
+                    <div class="form-group"><input type="text" id="subject" name="subject" placeholder="Subject" required></div>
+                    <div class="form-group"><textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea></div>
+                    <button type="submit" class="contact-submit-button">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info-container">
+                <h3>Contact Details</h3>
+                <div class="info-item"><i class="fas fa-map-marker-alt"></i><p>Jammu, Jammu & Kashmir, India</p></div>
+                <div class="info-item"><i class="fas fa-envelope"></i><a href="mailto:ronak23@iisertvm.ac.in">ronak23@iisertvm.ac.in</a></div>
+                <h3 class="info-heading">Professional Profiles</h3>
+                <div class="info-social-links">
+                    <a href="https://www.linkedin.com/in/ronak-singh-raina-91241232b?originalSubdomain=in" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/RonakSinghRaina" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <!-- <a href="#" target="_blank"><i class="fas fa-book-open"></i> arXiv</a> -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content"><p>&copy; 2025 Ronak.</p></div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

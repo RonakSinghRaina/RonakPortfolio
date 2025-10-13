@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects | Ronak</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="quantum-loader" id="loader">
+        <div class="loader-atom">
+            <div class="nucleus"></div>
+            <div class="electron-orbit"><div class="electron"></div></div>
+            <div class="electron-orbit"><div class="electron"></div></div>
+            <div class="electron-orbit"><div class="electron"></div></div>
+        </div>
+    </div>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <div class="physics-background"></div>
+    <div class="physics-particles" id="particleSystem"></div>
+    <div class="floating-equations" id="equationSystem"></div>
+<header id="header">
+    <nav>
+        <a href="../index.html" class="logo">HOME</a>
+
+        <!-- Desktop Navigation -->
+        <ul class="nav-links">
+            <li><a href="../projects_section/projects_main.html">Projects</a></li>
+            <li><a href="../skills_section/skills_main.html">Skills</a></li>
+            <li><a href="../blogs_section/blogs_main.html">Blogs</a></li>
+            <li><a href="../coursework_section/coursework_main.html">Coursework</a></li>
+            <li><a href="../contact_section/contact_main.html">Contact</a></li>
+        </ul>
+
+        <!-- Hamburger Menu Icon (for mobile) -->
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+</header>
+
+<!-- Mobile Navigation Menu (hidden by default) -->
+<div class="mobile-nav" id="mobileNav">
+    <a href="../projects_section/projects_main.html">Projects</a>
+    <a href="../skills_section/skills_main.html">Skills</a>
+    <a href="../blogs_section/blogs_main.html">Blogs</a>
+    <a href="../coursework_section/coursework_main.html">Coursework</a>
+    <a href="../contact_section/contact_main.html">Contact</a>
+</div>
+    <main class="page-container">
+        <div class="page-hero">
+            <h1 class="page-title"><i class="fas fa-rocket glow-icon"></i> Projects & Research</h1>
+            <p class="page-subtitle">Exploring the universe through computational simulations and theoretical investigations</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <a href="projects_files/simulation.html">
+                <div class="project-icon"><i class="fas fa-atom"></i></div>
+                <h3><a class="heading" href="projects_files/simulation.html"> Young's Double Slit Experiment </a>
+                 <div class="coming-soon">Coming Soon</div></h3>
+                <p>An interactive simulation of the double-slit experiment. Watch as single particles build a wave-like interference pattern, and see the pattern vanish when a "which-slit" measurement is made</p>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag secondary">NumPy</span>
+                    <span class="tag tertiary">Quantum Mechanics</span>
+                </div>
+            </div>
+            </a>
+            
+            <div class="project-card">
+                 <a href="projects_files/double_pendulum.html">
+                <div class="project-icon"><i class="fas fa-infinity pendulum-bob"></i></div> <a class="heading" href="projects_files/double_pendulum.html"><h3>Double Pendulum</h3></a>
+                <p>An interactive simulation demonstrating the periodic motion of a simple pendulum</p>
+                <div class="project-tags">
+                    <span class="tag secondary">JavaScript</span>
+                    <span class="tag">HTML5 Canvas</span>
+                    <span class="tag tertiary">Harmonic Motion</span>
+                </div>
+            </div>
+        </a>
+            
+            <div class="project-card">
+                 <a href="projects_files/simple_pendulum.html">
+                <div class="project-icon"><i class="fas fa-bezier-curve"></i></div> 
+                <a class="heading" href="projects_files/simple_pendulum.html"><h3>Simple Pendulum</h3></a>
+
+                <p>An interactive simulation demonstrating a Double pendulum.Observe how a simple, deterministic system can generate complex and unpredictable motion from slight changes in its initial conditions.</p>
+                <div class="project-tags">
+                    <span class="tag tertiary">JavaScript</span>
+                    <span class="tag">HTML5 Canvas</span>
+                    <span class="tag secondary">Chaos Theory</span>
+                </div>
+            </div>
+        </a>
+            </div>
+    </main>
+    <footer>
+        <div class="footer-content"><p>&copy; 2025 Ronak.</p></div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>
