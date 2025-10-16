@@ -384,9 +384,21 @@ nav {
   align-items: center;
 }
 .profile-container {
-  position: relative;
-  width: 300px;
-  height: 300px;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    display: block;
 }
 .profile-rings {
   position: absolute;
@@ -449,6 +461,16 @@ nav {
   border: 3px solid var(--glass-border);
   box-shadow: var(--shadow-glow);
   transition: all 0.3s ease;
+}
+.profile-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    display: block;
 }
 
 .deleted {
@@ -953,12 +975,7 @@ footer {
 /* --- Responsive Design for Mobile Devices (Corrected) --- */
 
 /* Add styles for the mobile menu elements first */
-.hamburger-menu {
-    display: none; /* Hidden on desktop */
-    cursor: pointer;
-    z-index: 1001; 
-}
-/* ... (keep all the other hamburger and mobile-nav styles you added before) ... */
+/* Update the hamburger menu styles in style.css */
 
 
 /* Main Media Query for tablets and mobile phones */
@@ -980,9 +997,7 @@ footer {
     .nav-links {
         display: none;
     }
-    .hamburger-menu {
-        display: block;
-    }
+    
 
     /* --- Home Page Fixes --- */
 
@@ -996,6 +1011,27 @@ footer {
         font-size: 2.5rem;
         word-wrap: break-word; /* Helps break long text if needed */
     }
+    /* Fix text spacing */
+.hero {
+    min-height: 80vh; /* Reduce from 100vh */
+    gap: 1rem; /* Add gap to control spacing between elements */
+    padding: 1rem; /* Reduce padding */
+}
+
+.profile-bio-section {
+    padding: 2rem; /* Reduce padding */
+    gap: 2rem; /* Reduce gap */
+}
+
+/* Adjust profile image section */
+.profile-side {
+    margin: 0; /* Remove margin */
+}
+
+.profile-container {
+    margin: 0 auto;
+    padding: 0;
+}
     .subtitle {
         font-size: 1.2rem;
         white-space: normal !important;  /* The KEY FIX: allows the long text to wrap */
@@ -1179,23 +1215,101 @@ footer {
 }
 
 /* Responsive adjustments for the contact page */
-@media (max-width: 900px) {
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-  }
-  @media (max-width: 768px) {
-
-    /* ... all your other mobile styles ... */
-
-    /* FIX for the typing animation subtitle */
-    .subtitle {
-        white-space: normal; /* Allows the text to wrap onto multiple lines */
-        width: 100%;         /* Ensure it takes the full available width */
-        animation: none;     /* OPTIONAL: Disables the typing animation on mobile for cleaner look */
-        border-right: none;  /* OPTIONAL: Removes the blinking cursor */
-        font-size: 1.1rem;   /* Slightly reduce font size for better wrapping */
+@media (max-width: 768px) {
+    /* --- General Layout Fix --- */
+    html, body {
+        width: 100%;
+        overflow-x: hidden !important;
     }
-}
+
+    /* --- Navigation --- */
+    nav {
+        padding: 0 1.5rem;
+    }
+    .nav-links {
+        display: none;
+    }
+  
+
+    /* --- Home Page Fixes --- */
+    .hero {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        word-wrap: break-word;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+        padding: 0 1rem;
+        white-space: normal !important;
+        overflow: visible;
+        width: 100% !important;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        white-space: normal !important;
+        width: 100% !important;
+        animation: none !important;
+        border-right: none !important;
+    }
+
+    /* Profile Section Fix */
+    .profile-bio-section {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+        padding: 4rem 1rem;
+        text-align: center;
+    }
+
+    .profile-side {
+        order: -1;
+        margin: 0 auto;
+    }
+
+    .profile-container {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .profile-img {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        left: 0;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* Hide rings on mobile */
+    .ring {
+        display: none;
+    }
+
+    /* Cards Grid Fix */
+    .quantum-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        padding: 2rem 1rem;
+        width: 100%;
+    }
+
+    .quantum-card {
+        margin-bottom: 1rem;
+    }
+
+    /* Bio content fix */
+    .bio-content {
+        width: 100%;
+        padding: 0 1rem;
+    }
 }
 
 /* --- Blog Post Specific Styles --- */
@@ -1554,30 +1668,7 @@ footer {
 /* --- Responsive Design for Mobile Devices --- */
 
 /* First, let's add styles for the new mobile menu elements */
-.hamburger-menu {
-    display: none; /* Hidden on desktop */
-    cursor: pointer;
-    z-index: 1001; /* Ensure it's above other header content */
-}
 
-.hamburger-menu .bar {
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-primary);
-    margin: 5px 0;
-    transition: all 0.4s ease;
-}
-
-/* Animate hamburger to an 'X' when active */
-.hamburger-menu.active .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-.hamburger-menu.active .bar:nth-child(2) {
-    opacity: 0;
-}
-.hamburger-menu.active .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
 
 .mobile-nav {
     position: fixed;
@@ -1628,9 +1719,7 @@ footer {
     .nav-links {
         display: none; /* Hide the desktop links */
     }
-    .hamburger-menu {
-        display: block; /* Show the hamburger icon */
-    }
+   
 
     /* --- General Layout --- */
     .page-container, .main {
@@ -1681,4 +1770,174 @@ footer {
     .visualization-panel, .control-panel {
         min-width: 100%;
     }
+}
+
+
+<div class="mobile-nav" id="mobileNav">
+    <a href="index.html">HOME</a> <!-- Add this line -->
+    <a href="projects_section/projects_main.html">Projects</a>
+    <a href="skills_section/skills_main.html">Skills</a>
+    <a href="blogs_section/blogs_main.html">Blogs</a>
+    <a href="coursework_section/coursework_main.html">Coursework</a>
+    <a href="contact_section/contact_main.html">Contact</a>
+</div>
+
+/* .mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem; /* Reduce gap between menu items */
+    /* transition: left 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 1000;
+} */ 
+
+.mobile-nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.5rem; /* Slightly smaller font size */
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.mobile-nav.active a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add hover effect */
+.mobile-nav a:hover {
+    color: var(--accent-primary);
+    transform: scale(1.1);
+}
+
+/* Stagger the animation for each link */
+.mobile-nav.active a:nth-child(1) { transition-delay: 0.1s; }
+.mobile-nav.active a:nth-child(2) { transition-delay: 0.2s; }
+.mobile-nav.active a:nth-child(3) { transition-delay: 0.3s; }
+.mobile-nav.active a:nth-child(4) { transition-delay: 0.4s; }
+.mobile-nav.active a:nth-child(5) { transition-delay: 0.5s; }
+.mobile-nav.active a:nth-child(6) { transition-delay: 0.6s; }
+
+
+/* Add this to your style.css */
+.scroll-down-indicator {
+    position: relative;
+    bottom: 0.1rem;
+    left: 95%;
+    transform: translateX(-50%);
+    color: var(--text-primary);
+    font-size: 2rem;
+    animation: bounce 3s infinite;
+    cursor: pointer;
+    z-index: 10;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-30px);
+    }
+    
+    60% {
+        transform: translateX(-50%) translateY(-15px);
+    }
+}
+
+
+/* --- Hamburger Menu & Mobile Navigation --- */
+
+.hamburger-menu {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+    z-index: 1002; /* Ensures it's on top of other content */
+}
+
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-primary);
+    margin: 5px 0;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Animate hamburger to an 'X' when active */
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 100%; /* Start off-screen to the right */
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: left 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 1001;
+}
+
+.mobile-nav.active {
+    left: 0; /* Slide in from the right */
+}
+
+.mobile-nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+/* --- Media Query to activate on mobile --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide desktop links */
+    }
+    .hamburger-menu {
+        display: block; /* Show hamburger icon */
+    }
+}
+/* Change hamburger 'X' color to white when menu is open */
+.hamburger-menu.active .bar {
+  background-color: #ffffff; /* White color */
+}
+/* --- Style for the Dedicated Close Button --- */
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-size: 3rem; /* Makes the 'X' large and easy to tap */
+    font-weight: 300;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.close-btn:hover {
+    color: var(--accent-primary);
+    transform: rotate(90deg); /* Adds a nice spin effect on hover */
 }

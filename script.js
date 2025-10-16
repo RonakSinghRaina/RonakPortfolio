@@ -204,3 +204,78 @@ document.addEventListener('DOMContentLoaded', () => {
     // ... all your other function calls ...
     initializeMobileMenu(); 
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburgerMenu');
+    const mobileNav = document.getElementById('mobileNav');
+    
+    hamburger.addEventListener('click', function() {
+        // Toggle active class on hamburger icon
+        this.classList.toggle('active');
+        // Toggle mobile nav
+        mobileNav.classList.toggle('active');
+        // Prevent scrolling when menu is open
+        document.body.style.overflow = this.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // Close menu when clicking a link
+    const mobileLinks = mobileNav.getElementsByTagName('a');
+    Array.from(mobileLinks).forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- Hamburger Menu Toggle ---
+    function initializeMobileMenu() {
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const mobileNav = document.getElementById('mobileNav');
+
+        if (hamburgerMenu && mobileNav) {
+            hamburgerMenu.addEventListener('click', () => {
+                // This single line toggles the 'active' class on both elements
+                hamburgerMenu.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+            });
+        }
+    }
+
+    // Call the function to set it up
+    initializeMobileMenu();
+
+    // ... (your other existing JS code like handleLoader, etc.) ...
+});
+// --- Hamburger Menu Toggle ---
+function initializeMobileMenu() {
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const mobileNav = document.getElementById('mobileNav');
+    const closeMenuBtn = document.getElementById('closeMenuBtn'); // Get the new button
+
+    if (hamburgerMenu && mobileNav && closeMenuBtn) {
+        // Function to open the menu
+        const openMenu = () => {
+            hamburgerMenu.classList.add('active');
+            mobileNav.classList.add('active');
+        };
+
+        // Function to close the menu
+        const closeMenu = () => {
+            hamburgerMenu.classList.remove('active');
+            mobileNav.classList.remove('active');
+        };
+
+        // Event listener for the hamburger icon to open it
+        hamburgerMenu.addEventListener('click', openMenu);
+
+        // Event listener for the new close button to close it
+        closeMenuBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent the link from trying to navigate
+            closeMenu();
+        });
+    }
+}
