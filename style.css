@@ -1713,64 +1713,6 @@ footer {
 .mobile-nav.active a:nth-child(5) { transition-delay: 0.6s; }
 
 
-/* Media Query for tablets and mobile phones */
-@media (max-width: 768px) {
-    /* --- Navigation --- */
-    .nav-links {
-        display: none; /* Hide the desktop links */
-    }
-   
-
-    /* --- General Layout --- */
-    .page-container, .main {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-    /* --- Home Page --- */
-    .hero h1 {
-        font-size: 2.5rem; /* Reduce heading size */
-    }
-    .profile-bio-section {
-        grid-template-columns: 1fr; /* Stack about me section */
-        gap: 3rem;
-        padding: 4rem 1rem;
-    }
-    .profile-side {
-        order: -1; /* Move the profile picture to the top */
-    }
-    .quantum-grid, .projects-grid, .skills-grid, .blog-grid {
-        grid-template-columns: 1fr; /* Make all grids single-column */
-        padding: 2rem 0;
-    }
-    
-    /* --- Projects Page --- */
-    .project-card, .skill-card, .blog-card {
-        padding: 1.5rem;
-    }
-
-    /* --- Contact Page --- */
-    .contact-wrapper {
-        grid-template-columns: 1fr; /* Stack contact form and info */
-    }
-
-    /* --- Blog Posts --- */
-    .blog-post {
-        padding: 2rem 1.5rem;
-        margin: 2rem 0;
-    }
-    .blog-header h1 {
-        font-size: 2rem;
-    }
-
-    /* --- Simulations --- */
-    .simulation-container {
-        flex-direction: column;
-    }
-    .visualization-panel, .control-panel {
-        min-width: 100%;
-    }
-}
 
 
 <div class="mobile-nav" id="mobileNav">
@@ -1912,32 +1854,63 @@ footer {
     font-weight: 500;
 }
 
-/* --- Media Query to activate on mobile --- */
+/* --- RESPONSIVE STYLES FOR ALL DEVICES (DEFINITIVE FIX) --- */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Hide desktop links */
-    }
-    .hamburger-menu {
-        display: block; /* Show hamburger icon */
-    }
-}
-/* Change hamburger 'X' color to white when menu is open */
-.hamburger-menu.active .bar {
-  background-color: #ffffff; /* White color */
-}
-/* --- Style for the Dedicated Close Button --- */
-.close-btn {
-    position: absolute;
-    top: 1rem;
-    right: 2rem;
-    font-size: 3rem; /* Makes the 'X' large and easy to tap */
-    font-weight: 300;
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
+  /* --- General Layout --- */
+  html, body {
+    overflow-x: hidden !important;
+  }
+  
+  /* --- Navigation --- */
+  nav { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+  .hamburger-menu { display: block; }
+  
+  /* --- Home Page Specific Fixes --- */
+  .hero { padding: 0 1rem; }
+  .hero h1 { font-size: 2.5rem; }
+  .subtitle {
+    white-space: normal !important;
+    animation: none !important;
+    border-right: none !important;
+    width: 100% !important;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  .profile-bio-section {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    padding: 4rem 1rem;
+    gap: 2rem;
+  }
+  .profile-side { order: -1; }
+  .quantum-grid {
+    grid-template-columns: 1fr !important;
+    padding: 2rem 1rem;
+  }
+  
+  /* --- FIX FOR ALL OTHER PAGES (Projects, Skills, Blogs, etc.) --- */
+  .page-container { 
+    padding: 120px 1rem 2rem 1rem;
+  }
+  .page-hero { margin-bottom: 2rem; }
+  .page-title { font-size: 2.5rem; }
 
-.close-btn:hover {
-    color: var(--accent-primary);
-    transform: rotate(90deg); /* Adds a nice spin effect on hover */
+  /* This is the key fix with !important to force the override */
+  .projects-grid,
+  .skills-grid,
+  .blog-grid {
+    grid-template-columns: 1fr !important; 
+    gap: 1.5rem;
+  }
+  
+  .project-card,
+  .skill-card,
+  .blog-card {
+      padding: 1.5rem;
+  }
+  
+  .contact-wrapper {
+      grid-template-columns: 1fr;
+  }
 }
